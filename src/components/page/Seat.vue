@@ -11,19 +11,19 @@
 
         <div>
             <div
-                class="zowei"
+                class="zuowei"
                 v-for="(item, index) in seatListData"
                 :key="index"
             >
                 <img
                     @click="booking(item)"
                     v-if="!item.used"
-                    src="../../assets/no.png"
+                    src="../../assets/可选座位.png" class="yizi"
                 />
                 <img
                     @click="booking(item)"
                     v-if="item.used"
-                    src="../../assets/yes.png"
+                    src="../../assets/已选座位.png" class="yizi"
                 />
                 <p @click="booking(item)">{{ item.name }}</p>
                 <p v-if="item.used" @click="cancelBooking(item)" style="font-size:14px;margin-top:5px;color:red;">取消预约</p>
@@ -165,11 +165,15 @@ export default {
     display: inline-block;
 }
 
-.zowei {
+.zuowei {
     width: 150px;
     height: 100px;
     text-align: center;
     float: left;
     cursor: pointer;
+}
+.yizi {
+    width: 50px;
+    height: 50px;
 }
 </style>
